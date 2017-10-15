@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: ;
+  text-align: center;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/*.quotes-wrapper {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+}*/
