@@ -35,15 +35,15 @@ var quotes = [
 ];
 
 function getRandomQuote() {
-  var randomArr = Math.floor(Math.random() * quotes.length);
-  var randomQuotes = quotes[randomArr];
+  var randomNum = Math.floor(Math.random() * quotes.length);
+  var randomQuotes = quotes[randomNum];
   // var wrapper = "<div id='quotes-wrapper'></div>";
   // var quotesSection = document.getElementsByClassName("random-quotes");
   // var wrapperEl = wrapper.appendChild(randomQuotes);
   // var wrapperPosition = quotesSection.appendChild(wrapper);
-  // console.log();
+  document.getElementById("quotesWrapper").innerHTML = randomQuotes;
 }
 
-document.getElementById("quotesWrapper").addEventListener("click", getRandomQuote);
-
-getRandomQuote();
+// document.getElementById("randomQuoteBtn").onclick = function() {
+//   getRandomQuote();
+// };
