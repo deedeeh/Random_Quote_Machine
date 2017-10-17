@@ -37,13 +37,19 @@ var quotes = [
 function getRandomQuote() {
   var randomNum = Math.floor(Math.random() * quotes.length);
   var randomQuotes = quotes[randomNum];
-  // var wrapper = "<div id='quotes-wrapper'></div>";
-  // var quotesSection = document.getElementsByClassName("random-quotes");
-  // var wrapperEl = wrapper.appendChild(randomQuotes);
-  // var wrapperPosition = quotesSection.appendChild(wrapper);
-  document.getElementById("quotesWrapper").innerHTML = randomQuotes;
+  var wrapper = document.getElementById("quotesWrapper");
+  return wrapper.innerHTML = quotesToString(randomQuotes);
 }
 
-// document.getElementById("randomQuoteBtn").onclick = function() {
-//   getRandomQuote();
-// };
+function quotesToString(quotes) {
+  var msg = '<blockquote>&ldquo; ' + quotes.quote + ' &rdquo;</blockquote>';
+  msg += '<br/> &mdash; ' + quotes.author;
+  return msg;
+}
+
+var el = document.getElementById("quotesWrapper");
+el.addEventListener('click', getRandomQuote);
+
+// var wrapper = "<div id='quotesWrapper'></div>";
+// var quotesSection = document.getElementsByClassName("random-quotes");
+// var quotesEl = quotesSection.appendChild(wrapper);
