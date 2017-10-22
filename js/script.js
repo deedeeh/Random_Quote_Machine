@@ -1,3 +1,10 @@
+//Problem 1: having the same randomNum respectively
+//Problem 2: twitter button when I click it, it doesn't show the quote inside the tweet box.
+
+
+//Solution 1: Stop the randomNum to be repeatedly.
+//Solution 2: Link the twitter button with this keyword to paste the quote inside the tweet box.
+
 
 var quotes = [
   {
@@ -47,9 +54,12 @@ function quotesToString(quotes) {
   return msg;
 }
 
-var el = document.getElementById("quotesWrapper");
-el.addEventListener('click', getRandomQuote);
+function homePageOnLoad() {
+  return wrapperEl.innerHTML = quotesToString(quotes[0]);
+}
 
-// var wrapper = "<div id='quotesWrapper'></div>";
-// var quotesSection = document.getElementsByClassName("random-quotes");
-// var quotesEl = quotesSection.appendChild(wrapper);
+var wrapperEl = document.getElementById("quotesWrapper");
+wrapperEl.addEventListener('click', getRandomQuote);
+
+
+window.addEventListener("load", homePageOnLoad);
