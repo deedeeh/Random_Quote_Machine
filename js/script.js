@@ -38,8 +38,43 @@ var quotes = [
   {
     quote: "If you have knowledge, let others light their candles in it.",
     author: "Margaret Fuller"
+  },
+  {
+    quote: "The essence of being human is that one does not seek perfection.",
+    author: "George Orwell"
+  },
+  {
+    quote: "Real generosity towards the future lies in giving all to the present.",
+    author: "Albert Camus"
+  },
+  {
+    quote: "A man is a success if he gets up in the morning and goes to bed at night and in between does what he wants to do.",
+    author: "Bob Dylan"
+  },
+  {
+    quote: "Man often becomes what he believes himself to be.",
+    author: "Mahatma Gandhi"
+  },
+  {
+    quote: "The world needs dreamers and the world needs doers. But above all, the world needs dreamers who do.",
+    author: "Sarah Ban Breathnach"
+  },
+  {
+    quote: "All misfortune is but a stepping stone to fortune.",
+    author: "Henry David Thoreau"
+  },
+  {
+    quote: "Change is the law of life. And those who look only to the past or present are certain to miss the future.",
+    author: "John F. Kennedy"
+  },
+  {
+    quote: "One secret of success in life is for a man to be ready for his opportunity when it comes.",
+    author: "Benjamin Disraeli"
   }
 ];
+
+var wrapperEl = document.getElementById("quotesWrapper");
+var clickBtnEl = document.getElementById("clickBtn");
 
 function getRandomQuote() {
   var randomNum = Math.floor(Math.random() * quotes.length);
@@ -58,8 +93,5 @@ function homePageOnLoad() {
   return wrapperEl.innerHTML = quotesToString(quotes[0]);
 }
 
-var wrapperEl = document.getElementById("quotesWrapper");
-wrapperEl.addEventListener('click', getRandomQuote);
-
-
+clickBtnEl.addEventListener('click', getRandomQuote);
 window.addEventListener("load", homePageOnLoad);
