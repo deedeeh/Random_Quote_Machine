@@ -1,10 +1,54 @@
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
 body {
   margin: 0;
   box-sizing: border-box;
-  font-family: ;
-  text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 *, *::before, *::after {
   box-sizing: inherit;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 1em 3%;
+  text-align: center;
+}
+
+.main-heading {
+  font-size: 1.414em;
+  font-weight: 700;
+}
+
+.subheading {
+  font-size: 0.790em;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.quotes-wrapper {
+  font-size: 1em;
+  padding: 2em 0 3em;
+}
+
+.buttons {
+  position: fixed;
+  bottom: 4em;
+  right: 0;
+  left: 0;
+  margin: 3em auto 1.4em;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin-bottom: 1em;
+}
+
+small {
+  font-size: 0.707em;
 }
