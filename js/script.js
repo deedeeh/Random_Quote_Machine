@@ -1,9 +1,9 @@
-//Problem 1: having the same randomNum respectively
-//Problem 2: twitter button when I click it, it doesn't show the quote inside the tweet box.
+//Problem: having the same randomNum respectively
+//Solution: Stop the randomNum to be repeatedly.
 
 
-//Solution 1: Stop the randomNum to be repeatedly.
-//Solution 2: Link the twitter button with this keyword to paste the quote inside the tweet box.
+//Problem: twitter button when I click it, it doesn't show the quote inside the tweet box.
+//Solution: Link the twitter button with this keyword to paste the quote inside the tweet box.
 
 
 var quotes = [
@@ -76,11 +76,11 @@ var quotes = [
 var wrapperEl = document.getElementById("quotesWrapper");
 var clickBtnEl = document.getElementById("clickBtn");
 
+
 function getRandomQuote() {
   var randomNum = Math.floor(Math.random() * quotes.length);
   var randomQuotes = quotes[randomNum];
-  var wrapper = document.getElementById("quotesWrapper");
-  return wrapper.innerHTML = quotesToString(randomQuotes);
+  return wrapperEl.innerHTML = quotesToString(randomQuotes);
 }
 
 function quotesToString(quotes) {
