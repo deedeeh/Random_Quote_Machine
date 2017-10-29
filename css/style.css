@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
 
 body {
   margin: 0;
@@ -13,32 +14,39 @@ body {
 
 .container {
   margin: 0 auto;
-  padding: 1em 3%;
+  padding: 1em 0;
   text-align: center;
 }
 
 .main-heading {
-  font-size: 1.414em;
+  font-size: 1.999em;
   font-weight: 700;
 }
 
 .subheading {
-  font-size: 0.790em;
+  font-size: 1.414em;
   font-weight: 400;
   line-height: 1.4;
+  padding: 0 4%;
 }
 
 .quotes-wrapper {
-  font-size: 1em;
-  padding: 2em 0 3em;
+  font-size: 1.414em;
+  padding: 2em 0;
+  font-family: 'Alegreya', Georgia, serif;
+  line-height: 1.6;
 }
 
 .buttons {
   position: fixed;
-  bottom: 4em;
+  top: 12em;
   right: 0;
   left: 0;
   margin: 3em auto 1.4em;
+}
+
+.quotes-btn, .twitter-btn {
+  cursor: pointer;
 }
 
 .footer {

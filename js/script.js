@@ -73,9 +73,9 @@ var quotes = [
   }
 ];
 
+// var repeatedNumArr = [];
 var wrapperEl = document.getElementById("quotesWrapper");
 var clickBtnEl = document.getElementById("clickBtn");
-
 
 function getRandomQuote() {
   var randomNum = Math.floor(Math.random() * quotes.length);
@@ -83,9 +83,24 @@ function getRandomQuote() {
   return wrapperEl.innerHTML = quotesToString(randomQuotes);
 }
 
+// function getRandomQuote() {
+//   var randomNum = Math.floor(Math.random() * quotes.length);
+//   if (repeatedNumArr.indexOf(randomNum) == -1) {
+//     repeatedNumArr.push(randomNum);
+//     wrapperEl.innerHTML = quotesToString(quotes[randomNum]);
+//   } else {
+//     getRandomQuote();
+//   }
+//   if (repeatedNumArr.length === quotes.length) {
+//     repeatedNumArr = [];
+//   }
+// }
+
 function quotesToString(quotes) {
-  var msg = '<blockquote>&ldquo; ' + quotes.quote + ' &rdquo;</blockquote>';
-  msg += '<br/> &mdash; ' + quotes.author;
+  var msg = "<blockquote>";
+  msg += "&#8220; " + quotes.quote + " &#8221;";
+  msg += "</blockquote>";
+  msg += "<br/> &mdash; " + quotes.author;
   return msg;
 }
 
