@@ -73,28 +73,31 @@ var quotes = [
   }
 ];
 
-// var repeatedNumArr = [];
+var repeatedNumArr = [];
 var wrapperEl = document.getElementById("quotesWrapper");
 var clickBtnEl = document.getElementById("clickBtn");
+
+// function getRandomQuote() {
+//   var randomNum = Math.floor(Math.random() * quotes.length);
+//   var randomQuotes = quotes[randomNum];
+//   return wrapperEl.innerHTML = quotesToString(randomQuotes);
+// }
 
 function getRandomQuote() {
   var randomNum = Math.floor(Math.random() * quotes.length);
   var randomQuotes = quotes[randomNum];
-  return wrapperEl.innerHTML = quotesToString(randomQuotes);
+  if (repeatedNumArr.indexOf(randomNum) == -1) {
+    repeatedNumArr.push(randomNum);
+    console.log(repeatedNumArr)
+    wrapperEl.innerHTML = quotesToString(randomQuotes);
+  } else {
+    getRandomQuote();
+    wrapperEl.innerHTML = quotesToString(randomQuotes);
+  }
+  if (repeatedNumArr.length == quotes.length) {
+    repeatedNumArr = [];
+  }
 }
-
-// function getRandomQuote() {
-//   var randomNum = Math.floor(Math.random() * quotes.length);
-//   if (repeatedNumArr.indexOf(randomNum) == -1) {
-//     repeatedNumArr.push(randomNum);
-//     wrapperEl.innerHTML = quotesToString(quotes[randomNum]);
-//   } else {
-//     getRandomQuote();
-//   }
-//   if (repeatedNumArr.length === quotes.length) {
-//     repeatedNumArr = [];
-//   }
-// }
 
 function quotesToString(quotes) {
   var msg = "<blockquote>";
