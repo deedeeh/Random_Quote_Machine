@@ -25,7 +25,7 @@ body {
   font-weight: 700;
   font-size: 1.999em;
   color: #3F3F3F;
-  margin: 4% 2% 0;
+  margin: 4% 3% 0;
 }
 
 .subheading {
@@ -47,6 +47,13 @@ body {
   font-size: 1em;
   text-align: center;
   color: #555555;
+  outline: none;
+}
+
+.quotes-btn:hover,
+.twitter-btn:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 .twitter-btn {
@@ -54,12 +61,17 @@ body {
 }
 
 .quotes-wrapper {
+  margin: 0;
   font-size: 1em;
   padding: 0;
   line-height: 1.6;
   font-family: 'Lato', Verdana, sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+blockquote {
+  margin: 0 2em;
 }
 
 .footer {
@@ -72,4 +84,51 @@ body {
 
 small {
   font-size: 0.707em;
+}
+
+/*************************** Media Queries ***************************/
+
+@media (min-width: 480px) {
+  .main-heading {
+    font-size: 2.827em;
+    margin: 15px 2.5% 0;
+  }
+  .subheading {
+    font-size: 1.414em;
+    line-height: 1.6;
+    padding: 0 4%;
+  }
+  .quotes-wrapper {
+    margin: 0 1%;
+    font-size: 1.414em;
+  }
+  .footer {
+    bottom: 1em;
+    margin-bottom: .5em;
+  }
+  small {
+    font-size: inherit;
+  }
+}
+
+@media (min-width: 768px) {
+  .quotes-wrapper {
+    margin: 0 16%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .buttons {
+    margin: 3em auto 4em;
+  }
+  .quotes-wrapper {
+    margin: 0 20%;
+  }
+}
+
+@media (min-width: 1224px) {
+  .quotes-wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+  }
 }
