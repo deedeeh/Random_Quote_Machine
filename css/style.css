@@ -8,6 +8,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', Verdana, sans-serif;
+  background-color: #EEF7F7;
 }
 
 *, *::before, *::after {
@@ -40,7 +41,7 @@ body {
 
 .quotes-btn, .twitter-btn {
   cursor: pointer;
-  background-color: #e7e7e7;
+  background-color: #D6DEDE;
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
