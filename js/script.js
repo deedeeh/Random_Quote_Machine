@@ -1,12 +1,5 @@
-//Problem: having the same randomNum respectively
-//Solution: Stop the randomNum to be repeatedly.
 
-
-//Problem: twitter button when I click it, it doesn't show the quote inside the tweet box.
-//Solution: Link the twitter button with this keyword to paste the quote inside the tweet box.
-
-
-var quotes = [
+var sourceQuotes = [
   {
     quote: "Whatever I know how to do, I've already done. Therefore I must always do what I do not know how to do.",
     author: "Eduardo Chillida"
@@ -73,30 +66,45 @@ var quotes = [
   }
 ];
 
-var repeatedNumArr = [];
+// Cache DOM references
 var wrapperEl = document.getElementById("quotesWrapper");
 var clickBtnEl = document.getElementById("clickBtn");
+var tweetBtnEl = document.getElementById("tweet-btn");
 
-// function getRandomQuote() {
-//   var randomNum = Math.floor(Math.random() * quotes.length);
-//   var randomQuotes = quotes[randomNum];
-//   return wrapperEl.innerHTML = quotesToString(randomQuotes);
-// }
+// Instantiate currentQuotes
+var currentQuotes = [];
+
+
+function getRandomNum() {
+  var randomNum = Math.floor(Math.random() * (quotes.length - 1));
+  return randomNum;
+}
+
+function refreshRepeated() {
+  if (repeatedIndex.length == quotes.length) {
+    repeatedIndex = [];
+  }
+}
 
 function getRandomQuote() {
-  var randomNum = Math.floor(Math.random() * quotes.length);
-  var randomQuotes = quotes[randomNum];
-  if (repeatedNumArr.indexOf(randomNum) == -1) {
-    repeatedNumArr.push(randomNum);
-    console.log(repeatedNumArr)
+  // generate a random num
+  var randomIndex = getRandomNum();
+  console.log("first random index", randomIndex)
+  repeatedIndex.push(randomIndex);
+  // pluck quote
+  var randomQuotes;
+  randomQuotes = quotes[randomIndex];
+  wrapperEl.innerHTML = quotesToString(randomQuotes);
+  // check if next random number is repeated
+  randomIndex = getRandomNum();
+  console.log("second random index", randomIndex)
+  if (repeatedIndex.indexOf(randomIndex) === -1) {
+    randomQuotes = quotes[randomIndex];
     wrapperEl.innerHTML = quotesToString(randomQuotes);
   } else {
-    getRandomQuote();
-    wrapperEl.innerHTML = quotesToString(randomQuotes);
+    console.log("hi");
   }
-  if (repeatedNumArr.length == quotes.length) {
-    repeatedNumArr = [];
-  }
+  refreshRepeated();
 }
 
 function quotesToString(quotes) {
