@@ -67,8 +67,8 @@ var sourceQuotes = [
 ];
 
 // Cache DOM references
-var wrapperEl = document.getElementById("quotesWrapper");
-var clickBtnEl = document.getElementById("clickBtn");
+var wrapperEl = document.getElementById("quotes-wrapper");
+var clickBtnEl = document.getElementById("click-btn");
 var tweetBtnEl = document.getElementById("tweet-btn");
 
 // Instantiate currentQuotes
@@ -105,7 +105,7 @@ function formatQuote(q) {
   const {quote, author} = q;
 
   return `
-    <blockquote class="quote">&#8220;${quote}&#8221;</blockquote>
+    <blockquote class="quote">&#8220; ${quote} &#8221;</blockquote>
     &mdash; ${author}
   `;
 }
