@@ -74,50 +74,57 @@ var tweetBtnEl = document.getElementById("tweet-btn");
 // Instantiate currentQuotes
 var currentQuotes = [];
 
+// This is called the Fisher–Yates Shuffle algorithm
+// This *great* article explains it: https://bost.ocks.org/mike/shuffle/
+function shuffle(array) {
+  var currentIndex = array.length;
+  var temporaryValue;
+  var randomIndex;
 
-function getRandomNum() {
-  var randomNum = Math.floor(Math.random() * (quotes.length - 1));
-  return randomNum;
-}
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
 
-function refreshRepeated() {
-  if (repeatedIndex.length == quotes.length) {
-    repeatedIndex = [];
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
   }
+
+  return array;
 }
 
-function getRandomQuote() {
-  // generate a random num
-  var randomIndex = getRandomNum();
-  console.log("first random index", randomIndex)
-  repeatedIndex.push(randomIndex);
-  // pluck quote
-  var randomQuotes;
-  randomQuotes = quotes[randomIndex];
-  wrapperEl.innerHTML = quotesToString(randomQuotes);
-  // check if next random number is repeated
-  randomIndex = getRandomNum();
-  console.log("second random index", randomIndex)
-  if (repeatedIndex.indexOf(randomIndex) === -1) {
-    randomQuotes = quotes[randomIndex];
-    wrapperEl.innerHTML = quotesToString(randomQuotes);
-  } else {
-    console.log("hi");
+
+// The object `q` is the current quote
+// Here we're "destructuring" it to get the values we need
+// We use a template literal to simplify the construction of the HTML
+function formatQuote(q) {
+  const {quote, author} = q;
+
+  return `
+    <blockquote class="quote">&#8220;${quote}&#8221;</blockquote>
+    &mdash; ${author}
+  `;
+}
+
+
+// Call Array.shift to remove the first value from currentQuotes
+// When currentQuotes is empty, clone from sourceQuotes and randomise
+function getQuote() {
+  if(currentQuotes.length === 0) {
+    currentQuotes = shuffle(sourceQuotes.slice());
   }
-  refreshRepeated();
+
+  const quote = currentQuotes.shift();
+  const status = `${quote.quote} - ${quote.author}`;
+
+  tweetBtnEl.href = `https://twitter.com/home?status=${status}`;
+  wrapperEl.innerHTML = formatQuote(quote);
 }
 
-function quotesToString(quotes) {
-  var msg = "<blockquote>";
-  msg += "&#8220; " + quotes.quote + " &#8221;";
-  msg += "</blockquote>";
-  msg += "<br/> &mdash; " + quotes.author;
-  return msg;
-}
 
-function homePageOnLoad() {
-  return wrapperEl.innerHTML = quotesToString(quotes[0]);
-}
-
-clickBtnEl.addEventListener('click', getRandomQuote);
-window.addEventListener("load", homePageOnLoad);
+clickBtnEl.addEventListener("click", getQuote);
+window.addEventListener("load", getQuote);
