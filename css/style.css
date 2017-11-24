@@ -3,7 +3,11 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', Verdana, sans-serif;
-  background-color: #cae6ff;
+  background: #cae6ff;
+  background: -webkit-linear-gradient(left, #40e0d0, #cae6ff);
+  background: -o-linear-gradient(right, #40e0d0, #cae6ff);
+  background: -moz-linear-gradient(right, #40e0d0, #cae6ff);
+  background: linear-gradient(to right, #40e0d0, #cae6ff);
 }
 
 *, *::before, *::after {
