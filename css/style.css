@@ -11,7 +11,7 @@ body {
 
 .container {
   margin: 0 auto;
-  padding: 5em 14% 4em;
+  padding: 5em 6% 4em;
   text-align: center;
 }
 
@@ -33,7 +33,7 @@ body {
 }
 
 .buttons {
-  margin: 4em auto 3em;
+  margin: 3em auto;
 }
 
 .quotes-btn {
@@ -68,7 +68,7 @@ body {
 
 .quotes-wrapper {
   margin: 0;
-  padding: 0;
+  padding: 0 10%;
   font-size: 1em;
   line-height: 1.6;
   font-family: 'Lato', Verdana, sans-serif;
@@ -76,13 +76,10 @@ body {
   font-style: normal;
 }
 
-blockquote {
-  margin: 2em 0;
-}
-
 .quote {
   font-style: italic;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
+  padding: 0;
 }
 
 .footer {
@@ -97,7 +94,7 @@ blockquote {
 
 @media (min-width: 767px) {
   .container {
-    padding: 5em 18% 3em;
+    padding: 5em 14% 3em;
   }
   .main-heading {
     margin: 2% 0 0;
@@ -120,21 +117,51 @@ blockquote {
   }
   .quotes-wrapper {
     font-size: 1.414em;
+    padding: 0 2em;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1023px) {
   .container {
     padding: 5em 24% 3em;
   }
 }
 
-@media (min-width: 1224px) {
+@media (min-width: 1223px) {
   .container {
-    padding: 5em 27% 3em;
+    padding: 5em 22% 3em;
   }
   .main-heading {
     margin: 3% 0 0;
+  }
+  .quotes-wrapper {
+    padding: 0 2.2em;
+  }
+}
+
+@media (min-width: 1823px) {
+  .main-heading {
+    margin: 4% 0 0;
     font-size: 3.998em;
+  }
+  .subheading {
+    font-size: 1.999em;
+  }
+  .buttons {
+    margin: 4em auto;
+  }
+  .quotes-btn {
+    padding: 15px 20px;
+    font-size: 1.4em;
+  }
+  #tweet-btn {
+    margin-left: 16px;
+  }
+  .quotes-wrapper {
+    padding: 0 5em;
+    font-size: 1.999em;
+  }
+  small {
+    font-size: 1em;
   }
 }
