@@ -3,6 +3,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', Verdana, sans-serif;
+  background-color: #cae6ff;
 }
 
 *, *::before, *::after {
@@ -87,7 +88,7 @@ body {
   bottom: 1.5em;
   right: 0;
   left: 0;
-  margin-bottom: 0.8em;
+  margin-bottom: 0.2em;
 }
 
 /*************************** Media Queries ***************************/
@@ -116,8 +117,8 @@ body {
     margin-left: 10px;
   }
   .quotes-wrapper {
+    padding: 0 4em;
     font-size: 1.414em;
-    padding: 0 2em;
   }
 }
 
@@ -129,13 +130,22 @@ body {
 
 @media (min-width: 1223px) {
   .container {
-    padding: 5em 22% 3em;
+    padding: 5em 25% 3em;
   }
   .main-heading {
     margin: 3% 0 0;
   }
   .quotes-wrapper {
-    padding: 0 2.2em;
+    padding: 0 4em;
+  }
+}
+
+@media (min-width: 1554px) {
+  .container {
+    padding: 5em 26% 3em;
+  }
+  .quotes-wrapper {
+    padding: 0 7em;
   }
 }
 
